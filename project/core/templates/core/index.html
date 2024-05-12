@@ -1,0 +1,11 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    Vino Club - Inicio
+{% endblock title %}
+
+{% block content %}
+    <a href="{% url 'usuario:home' %}">Ir a Usuarios</a>
+    <a href="{% url 'blog:home' %}">Ir a Blog</a>
+{% endblock content %}
+    

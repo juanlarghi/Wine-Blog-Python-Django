@@ -1,16 +1,16 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuario</title>
-</head>
-<body>
-    <h1>Usuarios</h1>
+{% extends 'core/base.html' %}
+
+ {% block title %}
+    Usuarios
+ {% endblock title %}
+
+ {% block content %}
     {% for usuario in usuarios %}
         <h2>{{usuario}}</h2>
         <p>{{usuario.email}}</p>
         <p>{{usuario.pais_origen_id}}</p>
     {% endfor %}
-</body>
-</html>
+
+    <a href="{% url 'core:home' %}">Volver al Inicio</a>
+ {% endblock content %}
+    
