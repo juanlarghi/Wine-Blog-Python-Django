@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+</head>
+<body>
+    <h1>Vino Club - Articulos</h1>
+    <div class="blog">
+        {% for blog in blogs %}
+            <div class="blog">
+                <h2><a href="#">{{ blog.titulo }}</a></h2>
+                <p>{{ blog.snippet }}</p>
+                <p>{{ blog.autor }} | {{ blog.fecha }}</p>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
