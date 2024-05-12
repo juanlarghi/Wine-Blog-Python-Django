@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vino Club</title>
+</head>
+<body>
+    <h1>usuario</h1>
+
+    {% for usuario in usuarios %}
+        <h2>{{usuario}}</h2>
+        <p>{{usuario.email}}</p>
+        {% if usuario.pais_origen_id %}
+            <p>{{usuario.pais_origen_id}}</p>
+        {% elif  %}
+            <p>No registra pais de origen.</p>
+        {% endif %}
+    {% endfor %}
+
+</body>
+</html>
