@@ -5,6 +5,17 @@
 {% endblock title %}
 
 {% block content %}
+
+    <div class="fs-3 pb-4">
+        <form action="{% url 'blog:home' %}" method="get">
+            <input type="text" name="consulta" placeholder="Buscar...">
+        </form>
+    </div>
+
+    <div class="fs-3 pb-4">
+        <a href="{% url 'blog:blog_create' %}">Escribir nuevo articulo</a>
+    </div>
+
     <div class="blog">
         {% for blog in blogs %}
             <div class="blog">
