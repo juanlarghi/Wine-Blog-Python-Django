@@ -16,7 +16,9 @@ blog
 
 ### Modelos
 
-
+Pais
+Usuario
+Blog
 
 ## Mejoras futuras
 

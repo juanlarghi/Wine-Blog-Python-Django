@@ -1,29 +1,34 @@
 {% extends 'core/base.html' %}
 {% load static %}
-
 {% block title %}
     <!--{% include 'core/components/title1.html' with title='Inicio' %}-->
 {% endblock title %}
-
 {% block content %}
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
-        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="{% static 'core/img/Vino-Club-Inicio.webp' %}" alt="..." /></div>
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0"
+                 src="{% static 'core/img/Vino-Club-Inicio.webp' %}"
+                 alt="..." />
+        </div>
         <div class="col-lg-5">
             <h1 class="font-weight-light">Formá parte de nuestro club de vinos</h1>
             <p>Recibí todos los meses una caja de vinos seleccionados por nuestros sommeliers.</p>
-            <p>Somos un equipo apasionado por el mundo del vino, y buscamos compartir con nuestra comunidad el GUSTO DE DESCUBRIR nuevas etiquetas mes a mes a través de experiencias únicas y exclusivas para los socios, con gran vocación de servicio.</p>
+            <p>
+                Somos un equipo apasionado por el mundo del vino, y buscamos compartir con nuestra comunidad el GUSTO DE DESCUBRIR nuevas etiquetas mes a mes a través de experiencias únicas y exclusivas para los socios, con gran vocación de servicio.
+            </p>
             <a class="btn btn-primary" href="#!">Asociate online</a>
         </div>
     </div>
     <!-- Call to Action-->
     <div class="card text-white bg-secondary my-4 py-2 text-center">
-        <div class="card-body"><p class="text-white m-0">Sé parte del Club. Recibí todos los meses una caja de vinos seleccionados</p></div>
+        <div class="card-body">
+            <p class="text-white m-0">Sé parte del Club. Recibí todos los meses una caja de vinos seleccionados</p>
+        </div>
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
-        {% include 'core/components/card.html' with title='Membresías' text='Cuatro tipos de membresías disponibles'%}
-        {% include 'core/components/card.html' with title='Descuentos' text='proximamente'%}
+        {% include 'core/components/card.html' with title='Membresías' text='Cuatro tipos de membresías disponibles' %}
+        {% include 'core/components/card.html' with title='Descuentos' text='proximamente' %}
     </div>
 {% endblock content %}
-    
