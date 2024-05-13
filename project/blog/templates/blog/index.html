@@ -1,7 +1,7 @@
 {% extends 'core/base.html' %}
 
 {% block title %}
-    Articulos
+    {% include 'core/components/title1.html' with title='Blog'%}
 {% endblock title %}
 
 {% block content %}
@@ -14,5 +14,4 @@
             </div>
         {% endfor %}
     </div>
-    <a href="{% url 'core:home' %}">Volver al Inicio</a>
 {% endblock content %}
