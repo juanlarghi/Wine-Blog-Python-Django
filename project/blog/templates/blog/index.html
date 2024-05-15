@@ -6,20 +6,20 @@
 
 {% block content %}
 
-    <div class="fs-3 pb-4">
-        <form action="{% url 'blog:home' %}" method="get">
+    <div class="fs-4 pb-4">
+        <form action="{% url 'blog:blog_search' %}" method="get">
             <input type="text" name="consulta" placeholder="Buscar...">
         </form>
     </div>
 
     <div class="fs-3 pb-4">
-        <a href="{% url 'blog:blog_create' %}">Escribir nuevo articulo</a>
+        <a href="{% url 'blog:blog_create' %}">Escribir nuevo artículo</a>
     </div>
 
     <div class="blog">
         {% for blog in blogs %}
             <div class="blog">
-                <h2><a href="#">{{ blog.titulo }}</a></h2>
+                <h2><a href="{% url 'blog:blog_fullview' blog.id %}">{{ blog.titulo }}</a></h2>
                 <p>{{ blog.snippet }}</p>
                 <p>{{ blog.autor }} | {{ blog.fecha }}</p>
             </div>

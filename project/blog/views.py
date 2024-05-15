@@ -15,13 +15,16 @@ def blog_create(request):
         form = forms.BlogForm()
     return render(request, "blog/blog_create.html", context={"form":form})
 
-#def blog_search(request):
-#    query = models.Blog.objects.all()
-#    if request.GET["consulta"]:
-#        consulta = request.GET["consulta"]
-#        query = models.Blog.objects.filter(consulta__icontains=consulta)
-#        context = {"articulos": query}
-#        return render(request, 'blog/index.html', context)
-#    else:
-#        query = models.Blog.objects.all()
-#        return HttpResponse("No se encontro ningun titulo")
+def blog_search(request):
+    consulta = request.GET.get("consulta", None)
+    if consulta:
+        query = models.Blog.objects.filter(titulo__icontains=consulta)
+    else:
+        query = models.Blog.objects.all()
+        
+    context = {"blogs": query}
+    return render(request, 'blog/index.html', context)
+
+def blog_fullview(request, pk):
+    query = models.Blog.objects.get(id=pk)
+    return render(request, "blog/blog_fullview.html", {"blog": query})

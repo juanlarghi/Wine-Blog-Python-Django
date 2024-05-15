@@ -1,0 +1,18 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {% include 'core/components/title1.html' with title='Blog'%}
+{% endblock title %}
+
+{% block content %}
+    <ul>
+        <h2>{{ blog.titulo }}</h2>
+        <p>{{ blog.cuerpo }}</p>
+        <p>{{ blog.autor }} | {{ blog.fecha }}</p>
+    </ul>
+
+    <div class="fs-4 pb-lg-2">
+        <a href="{% url 'blog:home' %}">Volver</a>
+    </div>
+    
+{% endblock content %}
