@@ -1,0 +1,17 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {% include 'core/components/title1.html' with title='Membresia'%}
+{% endblock title %}
+
+{% block content %}
+    <h2>¡Sumate al club!</h2>
+    <p>Elegí la membresia que mas te guste y disfruta de los siguientes beneficios</p>
+
+    <div class="row gx-6 gx-lg-5">
+        {% include 'core/components/card.html' with title='Membresía A' text='Membresia A desc' %}
+        {% include 'core/components/card.html' with title='Membresía B' text='Membresia B desc' %}
+        {% include 'core/components/card.html' with title='Membresía C' text='Membresia C desc' %}
+        {% include 'core/components/card.html' with title='Membresía D' text='Membresia D desc' %}
+    </div>
+{% endblock content %}

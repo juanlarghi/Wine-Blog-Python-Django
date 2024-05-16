@@ -11,4 +11,4 @@ class Blog(models.Model):
         return self.titulo
     
     def snippet(self):
-        return self.cuerpo[:100]+'...'
+        return self.cuerpo[:150]+'...'

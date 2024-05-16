@@ -23,7 +23,7 @@ def blog_search(request):
         query = models.Blog.objects.all()
         
     context = {"blogs": query}
-    return render(request, 'blog/index.html', context)
+    return render(request, "blog/index.html", context)
 
 def blog_fullview(request, pk):
     query = models.Blog.objects.get(id=pk)
