@@ -28,3 +28,14 @@ def blog_search(request):
 def blog_fullview(request, pk):
     query = models.Blog.objects.get(id=pk)
     return render(request, "blog/blog_fullview.html", {"blog": query})
+
+def blog_update(request, pk: int):
+    query = models.Blog.objects.get(id=pk)
+    if request.method == "POST":
+        form = forms.BlogForm(request.POST, instance=query)
+        if form.is_valid:
+            form.save()
+            return redirect("blog:home")
+    else:
+        form = forms.BlogForm(instance=query)
+    return render(request, "blog/blog_create.html", context={"form": form})

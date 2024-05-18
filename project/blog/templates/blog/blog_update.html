@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {% include 'core/components/title1.html' with title='Editar artículo'%}
+{% endblock title %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button> type="submit" class=btn btn-primary</button>
+    </form>
+        <div class="fs-4 pb-lg-2">
+            <a href="{% url 'blog:home' %}">Volver</a>
+        </div>
+
+{% endblock content %}
