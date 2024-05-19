@@ -38,4 +38,11 @@ def blog_update(request, pk: int):
             return redirect("blog:home")
     else:
         form = forms.BlogForm(instance=query)
-    return render(request, "blog/blog_create.html", context={"form": form})
+    return render(request, "blog/blog_update.html", context={"form": form})
+
+def blog_delete(request, pk: int):
+    query = models.Blog.objects.get(id=pk)
+    if request.method == "POST":
+        query.delete()
+        return redirect("blog:home")
+    return render(request, "blog/blog_delete.html", context={"blog": query})

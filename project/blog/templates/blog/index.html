@@ -21,8 +21,10 @@
             <div class="blog">
                 <h2><a href="{% url 'blog:blog_fullview' blog.id %}">{{ blog.titulo }}</a></h2>
                 <p>{{ blog.snippet }}</p>
-                <p>{{ blog.autor }} | {{ blog.fecha }} | <a href="{% url 'blog:blog_update' blog.id %}">Editar</a></p>
+                <p>{{ blog.autor }} | {{ blog.fecha }} | <a href="{% url 'blog:blog_update' blog.id %}">Editar</a> | <a href="{% url 'blog:blog_delete' blog.id %}">Eliminar</a> </p>
             </div>
         {% endfor %}
+
     </div>
+    <p><br></p>
 {% endblock content %}
