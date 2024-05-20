@@ -1,6 +1,6 @@
-# Tercera Pre Entrega Coderhouse
+# Entrega Final Coderhouse
 
-Comision: 54135
+Comision: 54135 - Python
 
 Alumno: Juan Larghi
 
@@ -12,6 +12,7 @@ Vino Club: un club para amantes del vino. Membresias con promociones y descuento
 
 core
 usuario
+membresia
 blog
 
 ### Modelos
