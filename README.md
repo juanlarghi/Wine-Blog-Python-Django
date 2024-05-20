@@ -12,6 +12,7 @@ Vino Club: un club para amantes del vino. Membresias con promociones y descuento
 
 core
 usuario
+membresia
 blog
 membresia
 
