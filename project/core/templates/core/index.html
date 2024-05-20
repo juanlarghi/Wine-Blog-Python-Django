@@ -4,6 +4,9 @@
     {# {% include 'core/components/title1.html' with title='Inicio' %} #}
 {% endblock title %}
 {% block content %}
+    {% if user.is_authenticated %}
+        {{ mensaje }}
+    {% endif %}
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
         <div class="col-lg-7">
@@ -21,7 +24,7 @@
     <!-- Call to Action-->
     <div class="card text-white bg-danger my-4 py-2 text-center">
         <div class="card-body">
-            <p class="text-white m-0">Sé parte del Club. Recibí todos los meses una caja de vinos seleccionados</p>
+            <p class="fs-5 text-white m-0">Sé parte del Club. Recibí todos los meses una caja de vinos seleccionados</p>
         </div>
     </div>
     <!-- Content Row-->

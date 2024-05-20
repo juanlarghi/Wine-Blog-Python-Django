@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+    {% include 'core/components/title1.html' with title='Registro de usuario' %}   
+{% endblock title %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="hidden" name="next" value="{% url 'core:home' %}">
+        <div class="my-2 py-2">
+            <button type="submit" class="btn btn-primary">Registrar</button>
+            <a href="{% url 'core:home' %}" class="btn btn-secondary">Cancelar</a>
+        </div>
+    </form>
+<p><br></p>
+{% endblock content %}
