@@ -10,7 +10,11 @@
         <table>
             {{ form.as_table }}
         </table>
-        <input type="hidden" name="next" value="{% url 'core:home' %}">
+        {% if request.GET.next %}
+            <input type="hidden" name="next" value="{% url 'blog:blog_create' %}">
+        {% else %}    
+            <input type="hidden" name="next" value="{% url 'core:home' %}">
+        {% endif %}
         <div class="my-2 py-2">
             <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
             <a href="{% url 'core:home' %}" class="btn btn-secondary">Cancelar</a>

@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, HttpResponse
 from . import models, forms
 
@@ -5,11 +6,15 @@ def home(request):
     blogs = models.Blog.objects.all().order_by('fecha')
     return render(request, 'blog/index.html', {'blogs': blogs})
 
+@login_required(login_url="/login/")
 def blog_create(request):
     if request.method == "POST":
         form = forms.BlogForm(request.POST)
         if form.is_valid():
-            form.save()
+            #guardar articulo nuevo en db
+            instance = form.save(commit=False)
+            instance.autor = request.user
+            instance.save()
             return redirect("blog:home")
     else:
         form = forms.BlogForm()

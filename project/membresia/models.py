@@ -8,6 +8,6 @@ class Membresia(models.Model):
     def __str__(self) -> str:
         return self.nombre
     
-    def currency_format(precio):
-        return '${:.,2f}'.format(precio)
+    def currency_format(self) -> str:
+        return "${self.precio:.2f}"
 

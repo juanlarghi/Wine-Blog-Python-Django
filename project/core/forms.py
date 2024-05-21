@@ -16,7 +16,7 @@ class CustomUserCreationForm(UserCreationForm):
         model = User
         fields = ["username", "password1", "password2"]
         widgets = {
-            "username": forms.TextInput(attrs={"class": "form-control"}),
-            "password1": forms.PasswordInput(attrs={"class": "form-control"}),
-            "password2": forms.PasswordInput(attrs={"class": "form-control"}),
+            "username": forms.TextInput(attrs={"class": "form-control mb-4"}),
+            "password1": forms.PasswordInput(attrs={"class": "form-control mb-4"}),
+            "password2": forms.PasswordInput(attrs={"class": "form-control mb-4"}),
         }
