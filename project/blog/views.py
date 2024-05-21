@@ -11,7 +11,10 @@ def blog_create(request):
     if request.method == "POST":
         form = forms.BlogForm(request.POST)
         if form.is_valid():
-            form.save()
+            #guardar articulo nuevo en db
+            instance = form.save(commit=False)
+            instance.autor = request.user
+            instance.save()
             return redirect("blog:home")
     else:
         form = forms.BlogForm()
