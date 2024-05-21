@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, HttpResponse
 from . import models, forms
 
@@ -5,6 +6,7 @@ def home(request):
     blogs = models.Blog.objects.all().order_by('fecha')
     return render(request, 'blog/index.html', {'blogs': blogs})
 
+@login_required(login_url="/login/")
 def blog_create(request):
     if request.method == "POST":
         form = forms.BlogForm(request.POST)

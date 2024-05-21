@@ -1,11 +1,9 @@
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from . import models
 from .forms import CustomAuthenticationForm, CustomUserCreationForm
 
-#@login_required
 def home(request):
     return render(request, 'core/index.html')
 
@@ -22,6 +20,7 @@ def register(request: HttpRequest) -> HttpResponse:
         if form.is_valid():
             username = form.cleaned_data["username"]
             form.save()
+            #log the user in
             return render(request, 'core/index.html', {"mensaje": "Usuario creado"})
     else:
         form = CustomUserCreationForm()
