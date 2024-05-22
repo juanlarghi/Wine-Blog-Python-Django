@@ -7,7 +7,6 @@
 {% block content %}
     <h2>¡Sumate al club!</h2>
     <p>Elegí la membresia que mas te guste y disfruta de los siguientes beneficios</p>
-
     <div class="row">
         {% for membresia in membresias %}   
             <div class="col sm-4 col-md-4 bg-transparent">
@@ -30,5 +29,4 @@
             <a href="{% url 'core:home' %}">Volver</a>
         </div>
     </div>
-    <p><br></p>
 {% endblock content %}
