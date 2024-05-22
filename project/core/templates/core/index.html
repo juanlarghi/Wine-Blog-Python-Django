@@ -19,19 +19,19 @@
             <h1 class="font-weight-light">Formá parte de nuestro club de vinos</h1>
             <p>Recibí todos los meses una caja de vinos seleccionados por nuestros sommeliers.</p>
             <p>Somos un equipo apasionado por el mundo del vino, y buscamos compartir con nuestra comunidad el GUSTO DE DESCUBRIR nuevas etiquetas mes a mes a través de experiencias únicas y exclusivas para los socios, con gran vocación de servicio.</p>
-            <a class="btn btn-secondary" href="{% url 'membresia:home' %}">Asociate online</a>
+            <a class="btn btn-danger" href="{% url 'membresia:home' %}">Asociate online</a>
         </div>
     </div>
     <!-- Call to Action-->
-    <div class="card text-white bg-danger my-4 py-2 text-center">
+    <div class="card text-bg-light bg-opacity-25 my-4 py-2 text-center border">
         <div class="card-body">
             <p class="fs-5 text-white m-0">Sé parte del Club. Recibí todos los meses una caja de vinos seleccionados</p>
         </div>
     </div>
     <!-- Content Row-->
     <div class="row gx-4 gx-lg-5">
-        {% include 'core/components/card.html' with title='Membresías' text='Cuatro tipos de membresías disponibles' %}
-        {% include 'core/components/card.html' with title='Descuentos' text='proximamente' %}
+        {% include 'core/components/card1.html' with title='Membresías' text='Tres tipos de membresías disponibles' %}
+        {% include 'core/components/card2.html' with title='Descuentos' text='proximamente' %}
     </div>
     <p><br></p>
 {% endblock content %}

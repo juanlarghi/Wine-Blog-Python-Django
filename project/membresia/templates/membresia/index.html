@@ -8,11 +8,24 @@
     <h2>¡Sumate al club!</h2>
     <p>Elegí la membresia que mas te guste y disfruta de los siguientes beneficios</p>
 
-    <div class="row gx-6 gx-lg-5">
-        {% include 'core/components/card.html' with title='Membresía A' text='Membresia A desc' %}
-        {% include 'core/components/card.html' with title='Membresía B' text='Membresia B desc' %}
-        {% include 'core/components/card.html' with title='Membresía C' text='Membresia C desc' %}
-        {% include 'core/components/card.html' with title='Membresía D' text='Membresia D desc' %}
+    <div class="row">
+        {% for membresia in membresias %}   
+            <div class="col sm-4 col-md-4 bg-transparent">
+                <div class="card h-100">            
+                    <div class="card-body" style="text-align: center">
+                        <h2 class="text-center">{{ membresia.nombre }}</h2>
+                        <p>${{ membresia.precio }}<small> /mes</small></p>
+                        <p>{{ membresia.descripcion }}</p>
+                        <div class="card-footer">{{ membresia.beneficio1 }}</div>
+                        <div class="card-footer">{{ membresia.beneficio2 }}</div>
+                        <div class="card-footer">"Envío gratis a todo el país, sin importar la cantidad de botellas."</div>
+                        <div class="text-center py-2">
+                            <a class="btn btn-danger btn-sm-4" href="#!">Subscribirse</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     </div>
     <p><br></p>
 {% endblock content %}

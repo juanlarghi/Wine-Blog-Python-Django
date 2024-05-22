@@ -11,7 +11,7 @@
             {{ form.as_table }}
         </table>
         {% if request.GET.next %}
-            <input type="hidden" name="next" value="{% url 'blog:blog_create' %}">
+            <input type="hidden" name="next" value="{{request.GET.next}}">
         {% else %}    
             <input type="hidden" name="next" value="{% url 'core:home' %}">
         {% endif %}

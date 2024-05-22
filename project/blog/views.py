@@ -34,6 +34,7 @@ def blog_fullview(request, pk):
     query = models.Blog.objects.get(id=pk)
     return render(request, "blog/blog_fullview.html", {"blog": query})
 
+@login_required(login_url="/login/")
 def blog_update(request, pk: int):
     query = models.Blog.objects.get(id=pk)
     if request.method == "POST":
@@ -45,6 +46,7 @@ def blog_update(request, pk: int):
         form = forms.BlogForm(instance=query)
     return render(request, "blog/blog_update.html", context={"form": form})
 
+@login_required(login_url="/login/")
 def blog_delete(request, pk: int):
     query = models.Blog.objects.get(id=pk)
     if request.method == "POST":

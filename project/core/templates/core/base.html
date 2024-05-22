@@ -17,11 +17,11 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'core/css/styles.css' %}" rel="stylesheet" />
     </head>
-    <body>
+    <body style="background-image: url('{% static 'core/img/bright-red.webp'%}')">
         <!-- Responsive navbar-->
         {% include 'core/components/navbar.html' %}
         <!-- Page Content-->
-        <div class="container px-4 px-lg-5">
+        <div class="container px-4 px-lg-5 bg-transparent">
             {% block title %}   
             {% endblock title %}
             

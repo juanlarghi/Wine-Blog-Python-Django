@@ -3,4 +3,4 @@ from . import models
 
 def home(request):
     query = models.Membresia.objects.all()
-    return render(request, 'membresia/index.html', {"membresia": query})
+    return render(request, 'membresia/index.html', {"membresias": query})
