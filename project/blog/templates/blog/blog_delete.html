@@ -8,7 +8,7 @@
     <p class="fs-4 pb-lg-2">¿Esta seguro que desea eliminar el articulo "{{ blog.titulo }}"?</p>
     <form method="post">
         {% csrf_token %}
-        <button type="submit" class="btn btn-danger" >Confirmar</button>
-        <a href="{% url 'blog:home' %}" class="btn btn-secondary">Cancelar</a>
+        <a href="{% url 'blog:home' %}" class="btn btn-outline-light">Cancelar</a>
+        <button type="submit" class="btn btn-outline-light" >Confirmar</button>
     </form>
 {% endblock content %}

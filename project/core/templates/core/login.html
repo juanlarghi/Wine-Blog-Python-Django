@@ -16,9 +16,16 @@
             <input type="hidden" name="next" value="{% url 'core:home' %}">
         {% endif %}
         <div class="my-2 py-2">
-            <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-            <a href="{% url 'core:home' %}" class="btn btn-secondary">Cancelar</a>
+            <a href="{% url 'core:home' %}" class="btn btn-outline-light ">Cancelar</a>
+            <button type="submit" class="btn btn-outline-light">Iniciar Sesión</button>
         </div>
     </form>
+    <div>
+        <p><br></p>
+        <h2>¿Todavia no te registraste?</h2>
+        <p>Registrate ahora y empeza a disfrutar del mejor club de vinos.</p>
+        <a class="btn btn-outline-light" href="{% url 'core:register' %}">Registrarse</a>
+    </div>
+
 <p><br></p>
 {% endblock content %}

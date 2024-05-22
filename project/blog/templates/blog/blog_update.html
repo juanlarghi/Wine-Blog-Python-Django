@@ -11,8 +11,8 @@
                 {{ form.as_table }}
             </table>
             <div class="my-2 py-2">
-                <button type="submit" class="btn btn-primary">Guardar</button>
-                <a href="{% url 'blog:home' %}" class="btn btn-secondary">Cancelar</a>
+                <a href="{% url 'blog:home' %}" class="btn btn-outline-light">Cancelar</a>
+                <button type="submit" class="btn btn-outline-light">Guardar</button>
             </div>
     </form>
 {% endblock content %}

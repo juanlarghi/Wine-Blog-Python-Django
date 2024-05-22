@@ -1,9 +1,9 @@
 <div class="col-md-6 mb-5">
-    <div class="card h-100">
+    <div class="card text-bg-light bg-opacity-25 border">
         <div class="card-body">
             <h2 class="card-title">{{ title }}</h2>
-            <p class="card-text">{{ text }}</p>
+            <p class="fs-5 text-white">{{ text }}</p>
+            <div class="card-footer"><a class="btn btn-secondary btn-sm" href="{% url 'membresia:home' %}">Ver más</a></div>
         </div>
-        <div class="card-footer"><a class="btn btn-secondary btn-sm" href="{% url 'membresia:home' %}">Ver más</a></div>
     </div>
 </div>

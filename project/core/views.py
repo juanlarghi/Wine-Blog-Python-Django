@@ -1,6 +1,6 @@
 from django.contrib.auth.views import LoginView
 from django.http import HttpRequest, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from . import models
 from .forms import CustomAuthenticationForm, CustomUserCreationForm
 
@@ -18,10 +18,11 @@ def register(request: HttpRequest) -> HttpResponse:
     if request.method == "POST":
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
+            #user signup
             username = form.cleaned_data["username"]
             form.save()
-            #log the user in
-            return render(request, 'core/index.html', {"mensaje": "Usuario creado"})
+        else:    
+            return render(request, 'core/index.html')
     else:
         form = CustomUserCreationForm()
     return render(request, 'core/register.html', {"form": form})

@@ -4,9 +4,11 @@
     {# {% include 'core/components/title1.html' with title='Inicio' %} #}
 {% endblock title %}
 {% block content %}
-    {% if user.is_authenticated %}
-    {% csrf_token %}
-        {{ mensaje }}
+    <div>
+        {% if user.is_authenticated %}
+        {% csrf_token %}
+            {{ mensaje }}
+    </div>
     {% endif %}
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-5">
