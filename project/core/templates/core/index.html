@@ -4,12 +4,6 @@
     {# {% include 'core/components/title1.html' with title='Inicio' %} #}
 {% endblock title %}
 {% block content %}
-    <div>
-        {% if user.is_authenticated %}
-        {% csrf_token %}
-            {{ mensaje }}
-    </div>
-    {% endif %}
     <!-- Heading Row-->
     <div class="row gx-4 gx-lg-5 align-items-center my-4">
         <div class="col-lg-7">
@@ -31,9 +25,9 @@
         </div>
     </div>
     <!-- Content Row-->
-    <div class="row gx-4 gx-lg-5">
-        {% include 'core/components/card1.html' with title='Membresías' text='Tres tipos de membresías disponibles' %}
-        {% include 'core/components/card2.html' with title='Descuentos' text='proximamente' %}
+    <div class="row gx-4 gx-lg-7">
+        {% include 'core/components/card1.html' with title='Membresías' text='Tres tipos de membresías disponibles. No te lo pierdas!' %}
+        {% include 'core/components/card2.html' with title='Descuentos' text='Disfruta de los mejores precios de nuestra Vinoteca!' %}
     </div>
     <p><br></p>
 {% endblock content %}

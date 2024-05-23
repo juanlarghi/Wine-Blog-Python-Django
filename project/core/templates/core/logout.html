@@ -1,4 +1,5 @@
 {% extends 'core/base.html' %}
+{% load static %}
 
 {% block title %}
     {% include 'core/components/title1.html' with title='Logout' %}   
@@ -6,4 +7,19 @@
 
 {% block content %}
     <h2 class="fs-4">Has cerrado sesión. Te esperamos pronto!</h2>
+    <div class="row gx-4 gx-lg-5 align-items-center my-4">
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0"
+                 src="{% static 'core/img/corks.webp' %}"
+                 alt="..." />
+        </div>
+        <div class="col-lg-5 align-items-center my-4">
+            <h1 class="font-weight-light mb-lg-4">Vino Club</h1>
+            <p class="fs-4 mb-lg-4">"El mejor club de vinos del país. La mejor seleccion de vinos a la puerta de tu casa"</p>
+            <p><br></p>
+            <div class="fs-4 pb-lg-2 my-5">
+                <a href="{% url 'core:home' %}">Volver</a>
+            </div>
+        </div>
+    </div>
 {% endblock content %}

@@ -5,4 +5,5 @@ app_name = 'usuario'
 
 urlpatterns = [
     path('', views.home, name='home'),
+    path('usuario/<int:pk>', views.usuario, name='usuario'),
 ]

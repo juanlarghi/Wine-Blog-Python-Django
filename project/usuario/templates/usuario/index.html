@@ -1,20 +1,21 @@
 {% extends 'core/base.html' %}
 
  {% block title %}
-    {% include 'core/components/title1.html' with title='Usuario'%}
+    {% include 'core/components/title1.html' with title='Perfil'%}
  {% endblock title %}
 
  {% block content %}
     {% for usuario in usuarios %}
       <div class="col mb-3">
-        <div class="card">
-           <div class="card-body">
-          <h2>{{usuario}}</h2>
-          <p>{{usuario.email}}</p>
-          <p>{{usuario.pais_origen_id}}</p>
-           </div>
-        </div>
+         <div class="card">
+            <div class="card-body">
+               <h2>{{usuario}}</h2>  
+               <p>{{usuario.email}}</p>
+               <p>{{usuario.direccion}} | {{ usuario.prov_origen_id }}</p>
+               <p>{{usuario.pais_origen_id}}</p>
+            </div>
+         </div>
       </div>
     {% endfor %}
-
+<p><br></p>
  {% endblock content %}
