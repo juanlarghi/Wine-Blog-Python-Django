@@ -4,12 +4,12 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'core:home' %}">Inicio</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:about' %}">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'blog:home' %}">Blog</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'membresia:home' %}">Membresia</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/" %} active {% endif %}" aria-current="page" href="{% url 'core:home' %}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/about/" %} active {% endif %}" href="{% url 'core:about' %}">About</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/blog/" %} active {% endif %}" href="{% url 'blog:home' %}">Blog</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/membresia/" %} active {% endif %}" href="{% url 'membresia:home' %}">Membresia</a></li>
                 {% if user.is_authenticated %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'usuario:home' %}">Perfil</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/usuario/" %} active {% endif %}" href="{% url 'usuario:home' %}">Perfil</a></li>
                 <li class="nav-item">
                     <form action="{% url 'core:logout' %}" method="post">
                         {% csrf_token %}
@@ -17,8 +17,8 @@
                     </form>
                 </li>
                 {% else %}
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:login' %}">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="{% url 'core:register' %}">Registrarse</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/login/" %} active {% endif %}" href="{% url 'core:login' %}">Login</a></li>
+                <li class="nav-item"><a class="nav-link {% if request.path == "/register/" %} active {% endif %}" href="{% url 'core:register' %}">Registrarse</a></li>
                 {% endif %}
             </ul>
         </div>

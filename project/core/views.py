@@ -1,4 +1,5 @@
 from django.contrib.auth.views import LoginView
+from django.contrib.admin.views.decorators import staff_member_required
 from django.contrib import messages
 from django.shortcuts import render, redirect
 from . import models
@@ -19,7 +20,6 @@ def register(request):
         form = CustomUserCreationForm(request.POST)
         if form.is_valid():
             #user signup
-            username = form.cleaned_data["username"]
             form.save()
             messages.success(request, f'Cuenta creada exitosamente! Ya puedes iniciar sesión!')
             return redirect("core:login")

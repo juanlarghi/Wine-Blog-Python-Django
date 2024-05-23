@@ -5,6 +5,7 @@
 {% endblock title %}
 
 {% block content %}
+<div class="fs-5 pb-6">
     <form action="" method="post">
         {% csrf_token %}
         <table>
@@ -12,7 +13,8 @@
         </table>
         <div class="my-2 py-2">
             <a href="{% url 'blog:home' %}" class="btn btn-outline-light">Cancelar</a>
-            <button type="submit" class="btn btn-outline-light">Guardar</button>
+            <button type="submit" class="btn btn-outline-light">Publicar</button>
         </div>
     </form>
+</div>
 {% endblock content %}
