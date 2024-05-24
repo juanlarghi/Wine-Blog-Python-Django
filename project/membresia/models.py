@@ -9,11 +9,3 @@ class Membresia(models.Model):
     
     def __str__(self) -> str:
         return self.nombre
-    
-    #def formato_precio(self) -> str:
-    #    return "${self.precio:.2f}"
-
-#class Membresia_usuario(models.Model):
-#    SELECT = (Membresia.nombre)
-#    
-#    usuario = models.ForeignKey
