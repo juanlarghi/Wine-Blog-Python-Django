@@ -4,6 +4,10 @@ Comision: 54135 - Python
 
 Alumno: Juan Larghi
 
+## Video de presentacion
+
+https://youtu.be/T1_7_xo_ipY
+
 ## Acerca del proyecto
 
 Vino Club: un club para amantes del vino. Blog exclusivo para enofilos. Debates y calificacion de vinos. Membresias con promociones y descuentos explusivos.
